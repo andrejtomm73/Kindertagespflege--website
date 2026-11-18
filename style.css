@@ -1,0 +1,474 @@
+:root {
+  --ink: #063b2e;
+  --muted: #e5f5ed;
+  --paper: #00915f;
+  --cream: rgba(255, 255, 255, 0.12);
+  --accent: #f4d06f;
+  --text-accent: #73584f;
+  --accent-dark: #063b2e;
+  --line: rgba(255, 255, 255, 0.3);
+  --content-width: 1120px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: "Trebuchet MS", sans-serif;
+  line-height: 1.6;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 1.25rem 1.5rem;
+  text-align: center;
+}
+
+h1,
+h2 {
+  margin: 0;
+  font-family: Georgia, serif;
+  line-height: 1.15;
+}
+
+h1 {
+  color: white;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+}
+
+.site-logo {
+  display: block;
+  width: min(100%, 52rem);
+  height: auto;
+  max-height: 8rem;
+  object-fit: contain;
+  border-radius: 0.5rem;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.65rem 1.5rem;
+  background: rgba(0, 145, 95, 0.95);
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 0.35rem 1rem rgba(6, 59, 46, 0.18);
+}
+
+nav a {
+  padding: 0.5rem 0.75rem;
+  color: white;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border-radius: 0.35rem;
+}
+
+nav a:hover,
+nav a:focus-visible {
+  color: white;
+  background: var(--text-accent);
+}
+
+main {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+section {
+  min-height: 55vh;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  padding: 5rem clamp(1.5rem, 6vw, 6rem);
+  border-top: 1px solid var(--line);
+  scroll-margin-top: 1rem;
+  text-align: center;
+}
+
+section:nth-child(odd) {
+  background: var(--cream);
+}
+
+.hero-section {
+  padding: 3rem 0;
+}
+
+.hero-image {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  box-shadow: 0 1rem 2rem rgba(6, 59, 46, 0.22);
+}
+
+.hero-image img {
+  display: block;
+  width: 100%;
+  height: min(62vh, 30rem);
+  min-height: 20rem;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  background: rgba(6, 59, 46, 0.42);
+}
+
+.hero-overlay h2 {
+  max-width: 42rem;
+  color: white;
+  font-size: clamp(2rem, 5vw, 4rem);
+  text-shadow: 0 0.15rem 0.5rem rgba(0, 0, 0, 0.35);
+}
+
+.about-section {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  justify-items: stretch;
+  gap: 0;
+  padding: 4rem 0;
+  text-align: left;
+}
+
+.about-image {
+  min-height: 25rem;
+  overflow: hidden;
+  border-radius: 0.75rem 0 0 0.75rem;
+}
+
+.about-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-copy {
+  display: grid;
+  align-content: center;
+  padding: clamp(2rem, 5vw, 4rem);
+  background: rgba(6, 59, 46, 0.28);
+  border: 1px solid var(--line);
+  border-left: 0;
+  border-radius: 0 0.75rem 0.75rem 0;
+}
+
+.about-copy h2,
+.about-copy p {
+  text-align: left;
+}
+
+.rooms-section {
+  display: block;
+  padding: 3rem 1rem 4rem;
+}
+
+#tagesablauf {
+  display: block;
+  padding: 4rem clamp(1rem, 4vw, 4rem);
+}
+
+#tagesablauf > h2 {
+  margin-bottom: 1.5rem;
+}
+
+#konzeption {
+  display: block;
+  padding: 4rem clamp(1rem, 4vw, 4rem);
+}
+
+#konzeption > h2 {
+  margin-bottom: 1rem;
+}
+
+#konzeption > p {
+  margin: 0 auto 1.5rem;
+}
+
+.location-block {
+  display: grid;
+  justify-items: center;
+  gap: 0.75rem;
+  width: min(100%, 34rem);
+  margin: 3rem auto 0;
+}
+
+.location-map {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+}
+
+.pdf-link {
+  display: inline-block;
+  padding: 0.65rem 1rem;
+  color: var(--ink);
+  background: var(--accent);
+  border-radius: 0.35rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.pdf-link:hover,
+.pdf-link:focus-visible {
+  color: white;
+  background: var(--text-accent);
+}
+
+.map-link {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.map-link:hover,
+.map-link:focus-visible {
+  color: var(--text-accent);
+}
+
+.schedule-table-wrapper {
+  width: min(100%, 58rem);
+  overflow-x: auto;
+  margin: 0 auto;
+}
+
+.schedule-table {
+  width: 100%;
+  min-width: 38rem;
+  border-collapse: collapse;
+  overflow: hidden;
+  color: var(--muted);
+  text-align: left;
+  background: rgba(6, 59, 46, 0.2);
+  border: 1px solid var(--line);
+  border-radius: 0.6rem;
+}
+
+.schedule-table caption {
+  padding: 0.75rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  text-align: left;
+}
+
+.schedule-table th,
+.schedule-table td {
+  padding: 1rem 1.1rem;
+  border-top: 1px solid var(--line);
+  vertical-align: top;
+}
+
+.schedule-table thead th {
+  color: var(--ink);
+  background: var(--accent);
+  border-top: 0;
+  font-family: Georgia, serif;
+  font-size: 1.05rem;
+}
+
+.schedule-table tbody th {
+  width: 35%;
+  color: white;
+  font-weight: 700;
+}
+
+.schedule-table tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.rooms-section > h2 {
+  margin-bottom: 1.25rem;
+}
+
+.rooms-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(2, 8rem);
+  gap: 1.25rem;
+  width: min(100%, 52rem);
+  min-height: 0;
+  margin: 4rem auto 0;
+  align-items: center;
+}
+
+.room-card {
+  width: 100%;
+  margin: 0;
+  padding: 0.4rem;
+  background: #fffdf5;
+  border-radius: 0.4rem;
+  box-shadow: 0 0.6rem 1rem rgba(6, 59, 46, 0.25);
+}
+
+.room-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 0.2rem;
+}
+
+.room-card-top-left {
+  grid-column: 1;
+  grid-row: 1;
+  transform: rotate(-4deg);
+}
+
+.room-card-bottom-center {
+  grid-column: 2;
+  grid-row: 2;
+  transform: rotate(3deg);
+}
+
+.room-card-middle-right {
+  grid-column: 3;
+  grid-row: 1 / span 2;
+  transform: rotate(-3deg);
+}
+
+.contact-card {
+  width: min(100%, 42rem);
+  padding: clamp(2rem, 5vw, 4rem);
+  background: rgba(6, 59, 46, 0.28);
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  box-shadow: 0 1rem 2rem rgba(6, 59, 46, 0.16);
+}
+
+.contact-card h2 {
+  margin-bottom: 1.5rem;
+}
+
+.contact-card address {
+  display: grid;
+  gap: 0.35rem;
+  color: var(--muted);
+  font-size: 1.1rem;
+  font-style: normal;
+}
+
+.contact-card strong {
+  margin-bottom: 0.4rem;
+  color: white;
+}
+
+.contact-card a {
+  color: var(--accent);
+  overflow-wrap: anywhere;
+}
+
+.contact-card a:hover,
+.contact-card a:focus-visible {
+  color: var(--text-accent);
+}
+
+section h2 {
+  max-width: 34rem;
+  color: var(--accent);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+section p {
+  max-width: 38rem;
+  margin: 1rem 0 0;
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+footer {
+  padding: 2rem 1.5rem;
+  color: var(--muted);
+  text-align: center;
+  background: var(--ink);
+}
+
+footer p {
+  margin: 0;
+}
+
+@media (max-width: 700px) {
+  header {
+    gap: 0.75rem;
+  }
+
+  nav {
+    justify-content: center;
+  }
+
+  section {
+    min-height: 48vh;
+    padding: 4rem 1.25rem;
+  }
+
+  .hero-section {
+    padding: 2rem 0;
+  }
+
+  .hero-image img {
+    height: 55vh;
+    min-height: 18rem;
+  }
+
+  .about-section {
+    grid-template-columns: 1fr;
+    padding: 2rem 0;
+  }
+
+  .about-image {
+    min-height: 18rem;
+    border-radius: 0.75rem 0.75rem 0 0;
+  }
+
+  .about-copy {
+    border-left: 1px solid var(--line);
+    border-top: 0;
+    border-radius: 0 0 0.75rem 0.75rem;
+  }
+
+  .rooms-section {
+    padding: 3rem 0;
+  }
+
+  .rooms-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    min-height: 0;
+    padding: 0 1rem;
+  }
+
+  .room-card {
+    width: min(100%, 24rem);
+  }
+
+  .room-card-top-left,
+  .room-card-bottom-center,
+  .room-card-middle-right {
+    align-self: center;
+  }
+}
